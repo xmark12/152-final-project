@@ -28,12 +28,12 @@ public class Afterimage : MonoBehaviour
         else
         {
             GameObject afterEffect;
-            if (m.jump && !m.grounded && !m.duck)
+            if (m.jump && !m.duck)
             {
                 afterEffect = Instantiate(afterImageJump, transform.position, transform.rotation);
                 afterEffect.transform.localScale = this.transform.localScale;
             }
-            else if (m.duck && m.grounded && !m.jump)
+            else if (m.duck && !m.jump)
             {
                 afterEffect = Instantiate(afterImageDuck, transform.position, transform.rotation);
                 afterEffect.transform.localScale = this.transform.localScale;

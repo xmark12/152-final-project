@@ -16,11 +16,11 @@ public class Movement : MonoBehaviour
     public float moveInput;
 
     public Transform feetPos;
-    public float checkRadius = 0.3;
+    public float checkRadius = 0.3F;
     public LayerMask whatIsGround;
 
     private float jumpTimeCounter;
-    public float jumpTime = 0.15;
+    public float jumpTime = 0.15F;
 
     // Start is called before the first frame update
     void Start()
