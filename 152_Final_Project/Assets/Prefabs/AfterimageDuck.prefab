@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8498941780961374467}
   - component: {fileID: 6543141655234123559}
   - component: {fileID: 8947373373984319362}
+  - component: {fileID: -2845527333981472516}
   m_Layer: 0
   m_Name: AfterimageDuck
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 263381509, guid: 80a51acc886db3d4b957eece98fcff7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,3 +106,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-2845527333981472516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738092329150290679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7410851fb9205d74db3345a7a96024b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  g: {fileID: 9046651056000841341, guid: 12f74e40a0c96d941b5da12ffda994a9, type: 3}
+  moveSpeed: 1

@@ -12,14 +12,14 @@ public class Movement : MonoBehaviour
     public Animator a;
 
     private Rigidbody2D rb;
-    public float jumpForce = 10;
+    public float jumpForce = 5;
 
     public Transform feetPos;
     public float checkRadius = 0.3F;
     public LayerMask whatIsGround;
 
     private float jumpTimeCounter;
-    public float jumpTime = 0.35F;
+    public float jumpTime = 1.0F;
 
     public BoxCollider2D collider;
     public Vector2 regularSize;
