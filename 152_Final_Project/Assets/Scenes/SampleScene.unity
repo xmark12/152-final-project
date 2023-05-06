@@ -588,6 +588,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989866638}
   m_CullTransparentMesh: 1
+--- !u!61 &1362409141 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3789939441798126949, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+  m_PrefabInstance: {fileID: 3789939443187899919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888155833
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +924,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3789939441798126949, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: m_Size.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789939441798126949, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789939441798126949, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789939441798126951, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -927,6 +944,18 @@ PrefabInstance:
       propertyPath: feetPos
       value: 
       objectReference: {fileID: 3789939443187899920}
+    - target: {fileID: 8560698450804958350, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1362409141}
+    - target: {fileID: 8560698450804958350, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: jumpTime
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560698450804958350, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22ff0b04724afa4392e9a3e1dc7f7f2, type: 3}
 --- !u!4 &3789939443187899920 stripped
