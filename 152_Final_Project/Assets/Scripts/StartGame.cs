@@ -10,6 +10,8 @@ public class StartGame : MonoBehaviour
     public HealthComponent h; //getting the HealthComponent script
     public ObstacleGenerator o; //getting the ObstacleGenerator script
 
+    public GameObject death; //getting the death screen
+
     private bool beginGame; //begins the game if true
     
     // Start is called upon clicking the button
@@ -30,6 +32,8 @@ public class StartGame : MonoBehaviour
             o.generationRateGround = Random.Range(100, 200);
             o.generationRateAir = Random.Range(100, 200);
             bg.SetActive(false);
+            death.SetActive(false);
+            death.transform.localScale = new Vector3(0, 0, 1);
             Time.timeScale = 1;
         }
         //upon reaching 0 HP, reveal the main menu, pause the game, and set beginGame to false

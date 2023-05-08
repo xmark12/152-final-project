@@ -14,6 +14,7 @@ public class ObstacleGenerator : MonoBehaviour
     public float timeInSeconds; //timer for the game in-general
     public int trueTime; //used to convert the float above into an int for readability
     public TextMeshProUGUI time; //UI to display the above 2 variables
+    public TextMeshProUGUI finalScore; //UI to display the score that the player ended on
 
     private int timerGround; //to time when to spawn a ground object
     private int timerAir; //to time when to spawn an air object
@@ -30,10 +31,11 @@ public class ObstacleGenerator : MonoBehaviour
 
     void Update()
     {
-        //the following 3 lines display the time
+        //the following 4 lines display the time
         timeInSeconds += Time.deltaTime;
         trueTime = (int)timeInSeconds;
         time.text = "Time: " + trueTime.ToString() + " seconds";
+        finalScore.text = "You achieved a score of: " + trueTime.ToString();
 
         //the following if and else if statements create ground and air objects at a faster rate every 10 seconds, maxing out at 80+ seconds
         if(trueTime == 10)

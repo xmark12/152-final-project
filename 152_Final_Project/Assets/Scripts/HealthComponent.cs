@@ -12,6 +12,11 @@ public class HealthComponent : MonoBehaviour
     public GameObject men; //getting the main menu UI
     public GameObject but; //getting the button on the main menu
 
+    public GameObject death; //getting the game over screen
+    public GameObject but2; //getting the button on game over screen
+
+    public TextMeshProUGUI score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,10 @@ public class HealthComponent : MonoBehaviour
             men.SetActive(true);
             but.GetComponent<StartGame>().enabled = false; //disables starting the game until the button is pressed again
             HP = 3; //resets HP back to 3; allowing the script to enter the else if statement below
+
+            death.SetActive(true);
+            death.transform.localScale = new Vector3(1, 1, 1); //expands the death screen to cover the camera
+            but2.GetComponent<StartGame>().enabled = false;
         }
         else if (HP == 3) //keep this or else everything breaks
         {

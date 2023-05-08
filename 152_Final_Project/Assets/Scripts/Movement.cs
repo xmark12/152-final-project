@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    //booleans used for checking where the player is
     public bool grounded;
     public bool jump;
     public bool duck;
@@ -14,13 +15,16 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     public float jumpForce = 5;
 
+    //the 3 values below are for checking if the player is grounded
     public Transform feetPos;
     public float checkRadius = 0.3F;
     public LayerMask whatIsGround;
 
+    //the 2 values below are for allowing the player to jump higher the longer they hold
     private float jumpTimeCounter;
     public float jumpTime = 1.0F;
 
+    //the 5 values below are for changing the player's collision detection while ducking
     public BoxCollider2D collider;
     public Vector2 regularSize;
     public Vector2 duckingSize;
@@ -49,14 +53,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
+        grounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround); //checks if the user is grounded every frame
         jump = !grounded;
 
         if (grounded && (Input.GetKeyDown("space") || Input.GetKeyDown("w")))
         {
             isJumping = true;
             duck = false;
-            collider.size = regularSize;
+            collider.size = regularSize; //makes sure user has normal collision while jumping
             collider.offset = regularOffset;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
@@ -65,7 +69,7 @@ public class Movement : MonoBehaviour
         {
             duck = true;
             collider.size = duckingSize;
-            collider.offset = new Vector2(regularOffset.x, duckingOffsetY);
+            collider.offset = new Vector2(regularOffset.x, duckingOffsetY); //changes user's collision while ducking
         }
 
         if ((Input.GetKey("space") || Input.GetKey("w")) && isJumping)
@@ -77,7 +81,7 @@ public class Movement : MonoBehaviour
                 jumpTimeCounter -= Time.deltaTime;
             } else
             {
-                isJumping = false;
+                isJumping = false; //after holding jump for a certain amount of time, can no longer go higher from holding jump
             }
         }
 
@@ -91,7 +95,7 @@ public class Movement : MonoBehaviour
             collider.offset = regularOffset;
         }
 
-
+        //based on the position and movement of the player, displays the proper animation
         if (jump && !grounded && !duck)
         {
             a.Play("Jump");
