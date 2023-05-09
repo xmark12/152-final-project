@@ -5,6 +5,7 @@ using UnityEngine;
 public class Afterimage : MonoBehaviour
 {
     public Movement m; //getting Movement.cs
+    public HealthComponent h; //getting HealthComponent.cs
 
     public GameObject afterImage; //getting afterimage for normal
     public GameObject afterImageJump; //getting afterimage for jumping
@@ -17,7 +18,7 @@ public class Afterimage : MonoBehaviour
         timer = 0.1f; //begin at 0.1 seconds
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (timer > 0)
         {

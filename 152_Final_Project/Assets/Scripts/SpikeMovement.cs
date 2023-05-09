@@ -10,11 +10,11 @@ public class SpikeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 0.5f; //moves at 0.5 speed
+        moveSpeed = 2f; //moves at 0.5 speed
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //responsible for moving the objects to the left
         transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x - moveSpeed, transform.position.y), 0.1f);

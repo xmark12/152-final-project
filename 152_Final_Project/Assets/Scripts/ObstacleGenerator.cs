@@ -35,7 +35,7 @@ public class ObstacleGenerator : MonoBehaviour
         timeInSeconds += Time.deltaTime;
         trueTime = (int)timeInSeconds;
         time.text = "Time: " + trueTime.ToString() + " seconds";
-        finalScore.text = "You achieved a score of: " + trueTime.ToString();
+        finalScore.text = "Final Time: " + trueTime.ToString() + " seconds";
 
         //the following if and else if statements create ground and air objects at a faster rate every 10 seconds, maxing out at 80+ seconds
         if(trueTime == 10)
@@ -89,7 +89,7 @@ public class ObstacleGenerator : MonoBehaviour
         {
             timerGround = 0;
             GameObject newGroundSpike = Instantiate(groundSpike, new Vector2(groundSpike.transform.position.x, groundSpike.transform.position.y), groundSpike.transform.rotation);
-            Destroy(newGroundSpike, 5f);
+            Destroy(newGroundSpike, 8f);
         }
         //once air timer is greater than or equal to the generation rate, spawn in the air object and delete it after 5 seconds
         timerAir++;
@@ -97,7 +97,7 @@ public class ObstacleGenerator : MonoBehaviour
         {
             timerAir = 0;
             GameObject newAirSpike = Instantiate(airSpike, new Vector2(airSpike.transform.position.x, airSpike.transform.position.y + Random.Range(-5.5f, 0f)), airSpike.transform.rotation);
-            Destroy(newAirSpike, 5f);
+            Destroy(newAirSpike, 8f);
         }
     }
 }
